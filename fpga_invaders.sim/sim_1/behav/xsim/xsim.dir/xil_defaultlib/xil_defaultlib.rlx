@@ -1,0 +1,15 @@
+0.7
+2020.2
+Oct 13 2023
+20:21:30
+/home/max/HDL/fpga_invaders/fpga_invaders.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sim_1/new/vram_tb.sv,1729624355,systemVerilog,,,,i2c_test_tb,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv,1729623593,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv,,drawer,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv,1729624310,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv,,game_controller,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v,1729293359,verilog,,,,i2c_controller_debug,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv,1729440592,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_command_rom.sv,,i2c_test,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_command_rom.sv,1729438639,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_screen_rom.sv,,init_command_rom,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_screen_rom.sv,1729456892,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/lose_screen_rom.sv,,init_screen_rom,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/lose_screen_rom.sv,1729438590,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/player_texture_rom.sv,,lose_screen_rom,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/player_texture_rom.sv,1729456743,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/win_screen_rom.sv,,player_texture_rom,,uvm,,,,,,
+/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/win_screen_rom.sv,1729438552,systemVerilog,,/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sim_1/new/vram_tb.sv,,win_screen_rom,,uvm,,,,,,

@@ -41,7 +41,7 @@ module game_controller(
     parameter enemy_number = enemy_n_w * enemy_n_h;
     parameter max_bullet_number = 8;
     
-    parameter enemy_size = 16;
+    parameter enemy_size = 9;
 
     typedef enum logic[3:0] {
         INIT,
@@ -57,7 +57,7 @@ module game_controller(
     parameter width = 64;
 
     // Memory to display
-    logic [7:0] vram [ width * height / 8 - 1 : 0 ];     // 64 x 128 screen   
+    logic [7:0] vram [ 2 * width * height / 8 - 1 : 0 ];     // 2x   64 x 128 screen   
     
     // 0: 11111111   xCoord -- left 
     // 1: 11111111   yCoord -- up
@@ -73,8 +73,6 @@ module game_controller(
     // 0: 1111
     // 1: 1111   enemy map; 1 if alive 0 if dead
     // 2: 1111
-    // 3: 1111
-    // 4: 1111
     logic [ enemy_number - 1 : 0 ]enemy_map;
     
     // 0: 00000000  xCoord
@@ -87,34 +85,45 @@ module game_controller(
     // 3: 00000000  is allocated   (if 1 -- allocated) (if 0 -- not allocated)
     logic [ 31:0 ] bullets [ max_bullet_number - 1 : 0 ];
 
+    logic active_vram;
 
     logic[21:0] counter_clk = 0;
 
     always_ff @(posedge clk) begin 
         counter_clk <= counter_clk + 1;        
     end
-    
+
+    drawer drw(
+        .clk(clk),
+        .state(state),
+        .player_coord(player[15:8]),
+        .active_vram(active_vram),
+        .vram(vram)
+    );
+
     always_comb begin 
         if(address_vram < width * height / 8)
-            data_vram = vram[address_vram];
+            //  Full address of vram using 2 vram spaces for bufferization
+            data_vram = vram[address_vram + active_vram * width * height / 8];
         else
             data_vram = 8'h0F;
     end
-    
+
     logic rst_hold = 0;
-    
+
     integer i;
     
     // ~21 Hz
-    always_ff @(posedge counter_clk[21]) begin 
+    always_ff @(posedge counter_clk[21]) begin
         if(rst) begin 
             state <= INIT;
         end else
             case(state)
                 INIT: begin
-                    enemy_map    <= 24'hffffff;  // regenerating map
+                    enemy_map    <= 9'b111_111_111;  // regenerating map
                     player[15:8] <= 8'd32;     // Set x coordinate 32
                     player[7:0]  <= 8'd3;      // Set 3 lives
+                    
                     for (i = 0; i < max_bullet_number; i = i + 1) begin
                         bullets[i] <= 32'h00000000;
                     end 
@@ -137,8 +146,20 @@ module game_controller(
                 
                 PLAYING: begin                    
                     if(mov_r) begin 
-                        if(player[15:8] != 8'd48)
+                        if(player[15:8] != 8'd56)
                             player[15:8] <= player[15:8] + 1;                        
+                    end
+
+                    // 0: 00000000  xCoord
+                    // 1: 00000000  yCoord
+                    // 2: 00000000  move direction (if 1 -- up) (if 0 -- down)
+                    // 3: 00000000  is allocated   (if 1 -- allocated) (if 0 -- not allocated)
+
+                    if(shot) begin 
+                        for (i = 0; i < max_bullet_number; i = i + 1) begin
+                            if(bullets[i])
+                            bullets[i] <= 32'h00_00_00_01;
+                        end 
                     end
                     
                     if(mov_l) begin 
@@ -167,11 +188,4 @@ module game_controller(
                 end
             endcase
         end
-        
-    drawer drw(
-        .clk(clk),
-        .state(state),
-        .player_coord(player[15:8]),
-        .vram(vram)
-    );
 endmodule

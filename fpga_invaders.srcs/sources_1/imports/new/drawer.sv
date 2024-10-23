@@ -24,11 +24,13 @@ module drawer(
     input logic clk,
     input logic[3:0] state,     
     input logic[7:0] player_coord,
-    
-    
-    output logic [7:0] vram [1023:0] // vram to change
+
+    output logic active_vram,           // if 0 vram1 is active, if 1 vram2 is active
+    output logic [7:0] vram [2047:0]    // vram to change
     
     );
+
+    logic[7:0] vram_clk = 0;
 
     parameter height = 128;
     parameter width  = 64;
@@ -84,7 +86,7 @@ module drawer(
         .data(p_data)
     );
     
-    logic [7:0] player_addr = (p_shift_down + p_ptr) * byte_len + player_coord[7:3];                    
+    logic [7:0] player_addr = (p_shift_down + p_ptr) * byte_len - player_coord[7:3];                    
 
     //////////////////////////////////////////
 
@@ -93,17 +95,27 @@ module drawer(
         DRAW_PLAYER
     } draw_stage;
 
+    logic selected_vram = 1;
+
+    assign active_vram = ~selected_vram;
+
     draw_stage ss = DRAW_CLEAR;
     logic[15:0] c_ptr = 0; // clear ptr
 
-    always_ff @(posedge clk) begin 
+    logic[15:0] address_shift = selected_vram * width * height / 8;
+
+    always_ff @(posedge clk)
+        vram_clk <= vram_clk + 1;
+
+    always_ff @(posedge vram_clk[7]) begin 
         case(state)
             WAITING: begin                    
                 if(isr_ptr < width * height / 8) begin
-                    vram[isr_ptr] <= isr_data;
+                    vram[isr_ptr + address_shift] <= isr_data;
                     isr_ptr <= isr_ptr + 1;
                 end else begin 
                     isr_ptr <= 0;
+                    selected_vram <= ~selected_vram;
                 end
             end
             
@@ -111,37 +123,23 @@ module drawer(
                 case(ss)
                     DRAW_CLEAR:
                         if(c_ptr < height * width / 8) begin
-                            vram[c_ptr] <= 8'h00;
+                            vram[c_ptr + address_shift] <= 8'h00;
                             c_ptr <= c_ptr + 1;
                         end else begin 
                             ss <= DRAW_PLAYER;
                             c_ptr <= 0;
                         end
                     DRAW_PLAYER:
-                        if(player_coord == 0) begin
-                            if(p_ptr < p_size) begin
-                                vram[player_addr] <= p_data;
-                                p_ptr <= p_ptr + 1;
-                            end else begin 
-                                p_ptr <= 0;
-                                ss <= DRAW_CLEAR;
-                            end
-                        end else begin
-                            if(p_ptr < p_size) begin
-                                vram[player_addr] <= p_data >> player_coord[2:0];
-                                vram[player_addr - 1] <= p_data << (3'h7 - player_coord[2:0]);
-                                p_ptr <= p_ptr + 1;
-                            end else begin 
-                                p_ptr <= 0;
-                                ss <= DRAW_CLEAR;
-                            end                
-                        end    
+                        if(p_ptr < p_size) begin
+                            vram[player_addr - 1 + address_shift] <= p_data >> player_coord[2:0];
+                            vram[player_addr - 2 + address_shift] <= p_data << (4'h8 - player_coord[2:0]);
+                            p_ptr <= p_ptr + 1;
+                        end else begin 
+                            p_ptr <= 0;
+                            ss <= DRAW_CLEAR;
+                            selected_vram <= ~selected_vram;
+                        end                
                 endcase
-                            
-
-//                player_coord
-                                
-                
             end
             
             LOSE: begin                    
@@ -150,6 +148,7 @@ module drawer(
                     lsr_ptr <= lsr_ptr + 1;
                 end else begin 
                     lsr_ptr <= 0;
+                    selected_vram <= ~selected_vram;
                 end
             end
             WIN: begin                    
@@ -158,6 +157,7 @@ module drawer(
                     wsr_ptr <= wsr_ptr + 1;
                 end else begin 
                     wsr_ptr <= 0;
+                    selected_vram <= ~selected_vram;
                 end
             end
         endcase

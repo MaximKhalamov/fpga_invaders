@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1729519648" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2c_test.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1729705167" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2c_test.dcp">
   <File Type="VDS-TIMING-PB" Name="i2c_test_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="i2c_test_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="i2c_test.dcp"/>
@@ -169,6 +169,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

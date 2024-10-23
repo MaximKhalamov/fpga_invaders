@@ -11,7 +11,7 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source i2c_test.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1383.008 ; gain = 62.836 ; free physical = 8626 ; free virtual = 11950
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1383.230 ; gain = 62.836 ; free physical = 6101 ; free virtual = 12817
 Command: read_checkpoint -auto_incremental -incremental /home/max/HDL/fpga_invaders/fpga_invaders.srcs/utils_1/imports/synth_1/i2c_test.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/max/HDL/fpga_invaders/fpga_invaders.srcs/utils_1/imports/synth_1/i2c_test.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -20,13 +20,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 54325
+INFO: [Synth 8-7075] Helper process launched with PID 28677
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2126.699 ; gain = 406.715 ; free physical = 7634 ; free virtual = 10959
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2126.016 ; gain = 406.715 ; free physical = 4818 ; free virtual = 11783
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'i2c_test' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'init_command_rom' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_command_rom.sv:22]
@@ -36,7 +34,6 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL
 INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v:176]
 INFO: [Synth 8-6155] done synthesizing module 'i2c_controller_debug' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v:4]
 INFO: [Synth 8-6157] synthesizing module 'game_controller' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:113]
 INFO: [Synth 8-6157] synthesizing module 'drawer' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'init_screen_rom' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_screen_rom.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'init_screen_rom' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_screen_rom.sv:23]
@@ -46,9 +43,10 @@ INFO: [Synth 8-6157] synthesizing module 'lose_screen_rom' [/home/max/HDL/fpga_i
 INFO: [Synth 8-6155] done synthesizing module 'lose_screen_rom' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/lose_screen_rom.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'player_texture_rom' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/player_texture_rom.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'player_texture_rom' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/player_texture_rom.sv:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:123]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:111]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:100]
 INFO: [Synth 8-6155] done synthesizing module 'drawer' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:121]
 INFO: [Synth 8-6155] done synthesizing module 'game_controller' (0#1) [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:23]
 WARNING: [Synth 8-7071] port 'is_win' of module 'game_controller' is unconnected for instance 'gc' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv:83]
 WARNING: [Synth 8-7071] port 'is_lost' of module 'game_controller' is unconnected for instance 'gc' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv:83]
@@ -59,15 +57,15 @@ WARNING: [Synth 8-7137] Register saved_data_reg in module i2c_controller_debug h
 WARNING: [Synth 8-7137] Register saved_data_2_reg in module i2c_controller_debug has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v:111]
 WARNING: [Synth 8-7137] Register counter_reg in module i2c_controller_debug has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v:117]
 WARNING: [Synth 8-7137] Register data_out_reg in module i2c_controller_debug has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_controller_debug.v:155]
-WARNING: [Synth 8-6014] Unused sequential element enemy_map_reg was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:115]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[7] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[6] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[5] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[4] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[3] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[2] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[1] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
-WARNING: [Synth 8-6014] Unused sequential element bullets_reg[0] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:119]
+WARNING: [Synth 8-6014] Unused sequential element enemy_map_reg was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:123]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[7] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[6] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[5] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[4] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[3] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[2] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[1] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
+WARNING: [Synth 8-6014] Unused sequential element bullets_reg[0] was removed.  [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:128]
 WARNING: [Synth 8-3848] Net is_win in module/entity game_controller does not have driver. [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:32]
 WARNING: [Synth 8-3848] Net is_lost in module/entity game_controller does not have driver. [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/game_controller.sv:33]
 WARNING: [Synth 8-7129] Port is_win in module game_controller is either unconnected or has no load
@@ -76,18 +74,18 @@ WARNING: [Synth 8-7129] Port address[7] in module init_command_rom is either unc
 WARNING: [Synth 8-7129] Port address[6] in module init_command_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port address[5] in module init_command_rom is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2759.637 ; gain = 1039.652 ; free physical = 6936 ; free virtual = 10266
+Finished RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3341.266 ; gain = 1621.965 ; free physical = 3588 ; free virtual = 10548
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2765.574 ; gain = 1045.590 ; free physical = 6937 ; free virtual = 10268
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3341.266 ; gain = 1621.965 ; free physical = 3629 ; free virtual = 10589
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2765.574 ; gain = 1045.590 ; free physical = 6937 ; free virtual = 10268
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3341.266 ; gain = 1621.965 ; free physical = 3629 ; free virtual = 10589
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2765.574 ; gain = 0.000 ; free physical = 6939 ; free virtual = 10269
+Netlist sorting complete. Time (s): cpu = 00:00:00.74 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3341.266 ; gain = 0.000 ; free physical = 3631 ; free virtual = 10590
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -113,17 +111,14 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/i2c_test_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2883.418 ; gain = 0.000 ; free physical = 6935 ; free virtual = 10265
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3473.109 ; gain = 0.000 ; free physical = 3593 ; free virtual = 10567
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2883.453 ; gain = 0.000 ; free physical = 6935 ; free virtual = 10265
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3473.145 ; gain = 0.000 ; free physical = 3592 ; free virtual = 10566
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 6912 ; free virtual = 10242
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 3584 ; free virtual = 10558
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'game_controller'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -138,42 +133,49 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'game_
                     STOP |                      00000000001 |                         00001000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'i2c_controller_debug'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    INIT |                              001 |                             0000
-                 WAITING |                              010 |                             0001
-                 PLAYING |                              100 |                             0010
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'game_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:10 ; elapsed = 00:01:11 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 2335 ; free virtual = 5673
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:14 ; elapsed = 00:02:16 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 418 ; free virtual = 5923
 ---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Design change found in an area of the design that prevents previous synthesis information being used
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   16 Bit       Adders := 4     
-	   2 Input    8 Bit       Adders := 4     
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 6     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 5     
+	   2 Input    4 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 5     
-	                8 Bit    Registers := 1031  
-	                1 Bit    Registers := 13    
+	                8 Bit    Registers := 2056  
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input   16 Bit        Muxes := 6     
-	   3 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 8     
+	   6 Input   16 Bit        Muxes := 2     
 	   9 Input   11 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1538  
+	   5 Input    8 Bit        Muxes := 512   
 	   9 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 1030  
-	   5 Input    8 Bit        Muxes := 257   
-	   2 Input    4 Bit        Muxes := 2     
-	   5 Input    2 Bit        Muxes := 256   
-	   2 Input    1 Bit        Muxes := 3890  
-	   7 Input    1 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 3     
+	   6 Input    4 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 511   
+	   2 Input    1 Bit        Muxes := 6723  
 	   5 Input    1 Bit        Muxes := 4     
-	   3 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 2     
 	   9 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -192,10 +194,39 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7129] Port led[2] in module i2c_test is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[1] in module i2c_test is either unconnected or has no load
-INFO: [Synth 8-4471] merging register 'p_ptr_reg[15:0]' into 'p_ptr_reg[15:0]' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:83]
-WARNING: [Synth 8-3917] design drawer__GB0 has port O2[7] driven by constant 0
-WARNING: [Synth 8-3917] design drawer__GB0 has port O2[0] driven by constant 0
-WARNING: [Synth 8-3917] design drawer__GB0 has port p_0_out[7] driven by constant 0
+INFO: [Synth 8-4471] merging register 'p_ptr_reg[15:0]' into 'p_ptr_reg[15:0]' [/home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/drawer.sv:85]
+WARNING: [Synth 8-3917] design drawer__GB6 has port p_0_out[7] driven by constant 0
+WARNING: [Synth 8-7129] Port address[15] in module init_screen_rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[14] in module init_screen_rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[13] in module init_screen_rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[12] in module init_screen_rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[11] in module init_screen_rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[10] in module init_screen_rom is either unconnected or has no load
+INFO: [Synth 8-3886] merging instance 'ss_reg[1]' (FDE) to 'ss_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ss_reg[2]' (FDE) to 'ss_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ss_reg[3] )
+INFO: [Synth 8-3886] merging instance 'i_1/c_ptr_reg[15]' (FDE) to 'i_1/c_ptr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_ptr_reg[14]' (FDE) to 'i_1/c_ptr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_ptr_reg[13]' (FDE) to 'i_1/c_ptr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_ptr_reg[12]' (FDE) to 'i_1/c_ptr_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\c_ptr_reg[11] )
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[8]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[14]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[6]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[10]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[13]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[5]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[15]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[11]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[12]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[7]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[9]' (FDE) to 'i_1/p_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_1/isr_ptr_reg[14]' (FDE) to 'i_1/isr_ptr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/isr_ptr_reg[15]' (FDE) to 'i_1/isr_ptr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/isr_ptr_reg[11]' (FDE) to 'i_1/isr_ptr_reg[12]'
+INFO: [Synth 8-3886] merging instance 'i_1/isr_ptr_reg[13]' (FDE) to 'i_1/isr_ptr_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\isr_ptr_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\p_ptr_reg[4] )
 WARNING: [Synth 8-7129] Port address[15] in module lose_screen_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port address[14] in module lose_screen_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port address[13] in module lose_screen_rom is either unconnected or has no load
@@ -208,34 +239,10 @@ WARNING: [Synth 8-7129] Port address[13] in module win_screen_rom is either unco
 WARNING: [Synth 8-7129] Port address[12] in module win_screen_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port address[11] in module win_screen_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port address[10] in module win_screen_rom is either unconnected or has no load
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[8]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[14]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[6]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[10]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[13]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[5]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[15]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[11]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[12]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[7]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_1/p_ptr_reg[9]' (FDE) to 'i_1/p_ptr_reg[4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\p_ptr_reg[4] )
-WARNING: [Synth 8-7129] Port address[15] in module init_screen_rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[14] in module init_screen_rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[13] in module init_screen_rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[12] in module init_screen_rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[11] in module init_screen_rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[10] in module init_screen_rom is either unconnected or has no load
-INFO: [Synth 8-3886] merging instance 'i_0/c_ptr_reg[14]' (FDE) to 'i_0/c_ptr_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_0/c_ptr_reg[15]' (FDE) to 'i_0/c_ptr_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_0/c_ptr_reg[12]' (FDE) to 'i_0/c_ptr_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_0/c_ptr_reg[13]' (FDE) to 'i_0/c_ptr_reg[11]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\c_ptr_reg[11] )
-INFO: [Synth 8-3886] merging instance 'ss_reg[1]' (FDE) to 'ss_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ss_reg[2]' (FDE) to 'ss_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ss_reg[3] )
+INFO: [Synth 8-3886] merging instance 'state_reg[2]' (FDRE) to 'state_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:49 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 1184 ; free virtual = 4581
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:21 ; elapsed = 00:03:38 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 232 ; free virtual = 4770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -259,19 +266,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:01:55 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 1166 ; free virtual = 4596
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:27 ; elapsed = 00:03:44 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 279 ; free virtual = 4788
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:42 ; elapsed = 00:02:55 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 1204 ; free virtual = 4637
+Finished Timing Optimization : Time (s): cpu = 00:03:33 ; elapsed = 00:03:50 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 407 ; free virtual = 4945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:44 ; elapsed = 00:03:08 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 948 ; free virtual = 4386
+Finished Technology Mapping : Time (s): cpu = 00:03:42 ; elapsed = 00:04:00 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 398 ; free virtual = 4951
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -289,37 +296,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:51 ; elapsed = 00:03:15 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 880 ; free virtual = 4337
+Finished IO Insertion : Time (s): cpu = 00:03:55 ; elapsed = 00:04:13 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 364 ; free virtual = 4946
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:51 ; elapsed = 00:03:15 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 880 ; free virtual = 4337
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:55 ; elapsed = 00:04:13 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 364 ; free virtual = 4946
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:53 ; elapsed = 00:03:17 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 862 ; free virtual = 4320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:58 ; elapsed = 00:04:15 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 363 ; free virtual = 4946
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:53 ; elapsed = 00:03:17 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 864 ; free virtual = 4322
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:58 ; elapsed = 00:04:15 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 363 ; free virtual = 4946
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:54 ; elapsed = 00:03:18 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 871 ; free virtual = 4329
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:01 ; elapsed = 00:04:19 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 359 ; free virtual = 4942
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:54 ; elapsed = 00:03:18 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 871 ; free virtual = 4328
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:01 ; elapsed = 00:04:19 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 359 ; free virtual = 4942
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -335,51 +342,52 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    30|
-|3     |LUT1   |     7|
-|4     |LUT2   |   514|
-|5     |LUT3   |   351|
-|6     |LUT4   |   998|
-|7     |LUT5   |  1055|
-|8     |LUT6   |  5999|
-|9     |MUXF7  |  1116|
-|10    |MUXF8  |   534|
+|1     |BUFG   |     3|
+|2     |CARRY4 |    33|
+|3     |LUT1   |    13|
+|4     |LUT2   |   617|
+|5     |LUT3   |   925|
+|6     |LUT4   |  3415|
+|7     |LUT5   |  4831|
+|8     |LUT6   | 12333|
+|9     |MUXF7  |  2207|
+|10    |MUXF8  |  1092|
 |11    |FDCE   |    10|
 |12    |FDPE   |     2|
-|13    |FDRE   |  8437|
+|13    |FDRE   | 16831|
 |14    |IBUF   |     5|
 |15    |IOBUF  |     1|
 |16    |OBUF   |     2|
 |17    |OBUFT  |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:54 ; elapsed = 00:03:18 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 871 ; free virtual = 4328
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:01 ; elapsed = 00:04:19 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 359 ; free virtual = 4942
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:53 ; elapsed = 00:03:19 . Memory (MB): peak = 2883.453 ; gain = 1045.590 ; free physical = 7192 ; free virtual = 10650
-Synthesis Optimization Complete : Time (s): cpu = 00:02:58 ; elapsed = 00:03:23 . Memory (MB): peak = 2883.453 ; gain = 1163.469 ; free physical = 7192 ; free virtual = 10641
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:56 ; elapsed = 00:04:17 . Memory (MB): peak = 3473.145 ; gain = 1621.965 ; free physical = 6564 ; free virtual = 11159
+Synthesis Optimization Complete : Time (s): cpu = 00:04:05 ; elapsed = 00:04:24 . Memory (MB): peak = 3473.145 ; gain = 1753.844 ; free physical = 6586 ; free virtual = 11164
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2883.453 ; gain = 0.000 ; free physical = 7194 ; free virtual = 10642
-INFO: [Netlist 29-17] Analyzing 1681 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.31 . Memory (MB): peak = 3473.145 ; gain = 0.000 ; free physical = 6583 ; free virtual = 11162
+INFO: [Netlist 29-17] Analyzing 3333 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'i2c_test' is not ideal for floorplanning, since the cellview 'drawer' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2907.430 ; gain = 0.000 ; free physical = 7191 ; free virtual = 10640
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3497.121 ; gain = 0.000 ; free physical = 6584 ; free virtual = 11164
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
 
-Synth Design complete | Checksum: e44b6b96
+Synth Design complete | Checksum: fefe766f
 INFO: [Common 17-83] Releasing license: Synthesis
-69 Infos, 53 Warnings, 5 Critical Warnings and 0 Errors encountered.
+71 Infos, 52 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:03 ; elapsed = 00:03:28 . Memory (MB): peak = 2907.465 ; gain = 1520.488 ; free physical = 7200 ; free virtual = 10649
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 8563.402; main = 2154.342; forked = 6577.784
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 13578.105; main = 2907.434; forked = 10718.695
+synth_design: Time (s): cpu = 00:04:13 ; elapsed = 00:04:32 . Memory (MB): peak = 3497.156 ; gain = 2109.957 ; free physical = 6584 ; free virtual = 11164
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 8978.500; main = 2661.438; forked = 6515.607
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 14107.398; main = 3497.125; forked = 10658.297
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2931.441 ; gain = 0.000 ; free physical = 7201 ; free virtual = 10650
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3521.133 ; gain = 0.000 ; free physical = 6584 ; free virtual = 11166
 INFO: [Common 17-1381] The checkpoint '/home/max/HDL/fpga_invaders/fpga_invaders.runs/synth_1/i2c_test.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3521.133 ; gain = 23.977 ; free physical = 6317 ; free virtual = 11068
 INFO: [runtcl-4] Executing : report_utilization -file i2c_test_utilization_synth.rpt -pb i2c_test_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 21 17:11:15 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 23 20:44:22 2024...
