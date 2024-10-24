@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
@@ -93,6 +94,7 @@ read_verilog -library xil_defaultlib -sv {
   /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/init_screen_rom.sv
   /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/lose_screen_rom.sv
   /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/player_texture_rom.sv
+  /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/new/vram.sv
   /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/win_screen_rom.sv
   /home/max/HDL/fpga_invaders/fpga_invaders.srcs/sources_1/imports/new/i2c_test.sv
 }

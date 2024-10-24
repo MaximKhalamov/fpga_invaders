@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Oct 23 20:44:27 2024
-# Process ID: 29395
+# Start of session at: Thu Oct 24 18:53:57 2024
+# Process ID: 42592
 # Current directory: /home/max/HDL/fpga_invaders/fpga_invaders.runs/impl_1
 # Command line: vivado -log i2c_test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source i2c_test.tcl -notrace
 # Log file: /home/max/HDL/fpga_invaders/fpga_invaders.runs/impl_1/i2c_test.vdi
 # Journal file: /home/max/HDL/fpga_invaders/fpga_invaders.runs/impl_1/vivado.jou
-# Running On: pavilion-e79168, OS: Linux, CPU Frequency: 3000.588 MHz, CPU Physical cores: 4, Host memory: 16524 MB
+# Running On: pavilion-e79168, OS: Linux, CPU Frequency: 1720.190 MHz, CPU Physical cores: 4, Host memory: 16524 MB
 #-----------------------------------------------------------
 source i2c_test.tcl -notrace

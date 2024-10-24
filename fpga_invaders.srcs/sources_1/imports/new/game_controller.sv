@@ -55,9 +55,6 @@ module game_controller(
 
     parameter height  = 128;
     parameter width = 64;
-
-    // Memory to display
-    logic [7:0] vram [ 2 * width * height / 8 - 1 : 0 ];     // 2x   64 x 128 screen   
     
     // 0: 11111111   xCoord -- left 
     // 1: 11111111   yCoord -- up
@@ -93,21 +90,21 @@ module game_controller(
         counter_clk <= counter_clk + 1;        
     end
 
+    logic [15:0] address_vram_display;
+
+
+    //  Full address of vram using 2 vram spaces for bufferization
+    assign address_vram_display = address_vram + active_vram * width * height / 8;
+
     drawer drw(
         .clk(clk),
         .state(state),
         .player_coord(player[15:8]),
         .active_vram(active_vram),
-        .vram(vram)
+        .bullets(bullets),
+        .address_vram_display(address_vram_display),
+        .data_vram(data_vram)
     );
-
-    always_comb begin 
-        if(address_vram < width * height / 8)
-            //  Full address of vram using 2 vram spaces for bufferization
-            data_vram = vram[address_vram + active_vram * width * height / 8];
-        else
-            data_vram = 8'h0F;
-    end
 
     logic rst_hold = 0;
 
@@ -150,6 +147,11 @@ module game_controller(
                             player[15:8] <= player[15:8] + 1;                        
                     end
 
+                    if(mov_l) begin 
+                        if(player[15:8] != 0)
+                            player[15:8] <= player[15:8] - 1;
+                    end
+
                     // 0: 00000000  xCoord
                     // 1: 00000000  yCoord
                     // 2: 00000000  move direction (if 1 -- up) (if 0 -- down)
@@ -157,15 +159,27 @@ module game_controller(
 
                     if(shot) begin 
                         for (i = 0; i < max_bullet_number; i = i + 1) begin
-                            if(bullets[i])
-                            bullets[i] <= 32'h00_00_00_01;
+                            if(bullets[i][0] != 0) begin
+                                bullets[i] <= ( player[15:8] << 24 ) + 32'h00_16_01_01;
+                                   
+                            end
                         end 
                     end
-                    
-                    if(mov_l) begin 
-                        if(player[15:8] != 0)
-                            player[15:8] <= player[15:8] - 1;
+
+                    for (i = 0; i < max_bullet_number; i = i + 1) begin
+                        if(bullets[i][0] != 0) begin
+                            if(bullets[i][8] == 0)
+                                bullets[i] <= bullets[i] + (1 << 16);
+                            else
+                                bullets[i] <= bullets[i] + (1 << 16);                           
+                        end
+                        
+                        if(bullets[i][23:16] < 0 || bullets[i][23:16] > height)
+                            bullets[i] <= 32'h00_00_00_00;                           
                     end
+                    
+                    
+                    
                 end
                 
                 LOSE: begin                                        
