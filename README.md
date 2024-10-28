@@ -13,6 +13,8 @@ How game looks like:
 
 ![example](https://github.com/user-attachments/assets/301281af-b741-4946-bb56-3c846e88b3a1)
 
+![photo_2024-10-28_18-26-01](https://github.com/user-attachments/assets/920b2f91-f1e0-4eec-a558-c0950f62dff7)
+
 Link to the game demonstration:
 
 https://youtu.be/L37piOE3Hrw?feature=shared
