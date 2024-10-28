@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log i2c_test.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source i2c_test.tcl -notrace
+EAStep vivado -log fpga_invaders.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source fpga_invaders.tcl -notrace
 
 

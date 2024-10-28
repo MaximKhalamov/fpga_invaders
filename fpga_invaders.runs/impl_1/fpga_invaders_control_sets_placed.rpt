@@ -1,0 +1,146 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Oct 28 14:56:38 2024
+| Host         : pavilion-e79168 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file fpga_invaders_control_sets_placed.rpt
+| Design       : fpga_invaders
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    68 |
+|    Minimum number of control sets                        |    68 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   204 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    68 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |    31 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    12 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     3 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             134 |           70 |
+| No           | No                    | Yes                    |               3 |            2 |
+| No           | Yes                   | No                     |              83 |           24 |
+| Yes          | No                    | No                     |             262 |          111 |
+| Yes          | No                    | Yes                    |               9 |            2 |
+| Yes          | Yes                   | No                     |             145 |           60 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|         Clock Signal        |                     Enable Signal                    |                Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|  counter_clk_reg[21]        | gc/rng/state_reg[2]                                  |                                               |                1 |              1 |         1.00 |
+|  counter_clk_reg[21]        | gc/player[15]_i_2_n_0                                |                                               |                2 |              2 |         1.00 |
+| ~i2c_master/i2c_clk_reg_n_0 |                                                      | input_c                                       |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[3].cc/b_ptr[3]_i_1__2_n_0          |                1 |              4 |         4.00 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/state_reg[0]_0                      |                                               |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[7].cc/b_ptr[3]_i_1__6_n_0          |                1 |              4 |         4.00 |
+|  counter_clk_reg[21]        | gc/rng/bullets_reg[4][0]_1                           | gc/genblk1[1].cc/state_reg[1]                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/mc_cc/b_ptr[3]_i_1__11_n_0                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[4].cc/b_ptr[3]_i_1__3_n_0          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[2].cc/b_ptr[3]_i_1__1_n_0          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[0].cc/clear                        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[8].cc/b_ptr[3]_i_1__7_n_0          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[10].cc/b_ptr[3]_i_1__9_n_0         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[1].cc/b_ptr[3]_i_1__0_n_0          |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[6].cc/b_ptr[3]_i_1__5_n_0          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[5].cc/b_ptr[3]_i_1__4_n_0          |                1 |              4 |         4.00 |
+|  counter_clk_reg[21]        | gc/player[15]_i_2_n_0                                | gc/player[15]_i_1_n_0                         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[11].cc/b_ptr[3]_i_1__10_n_0        |                1 |              4 |         4.00 |
+|  counter_clk_reg[21]        | gc/enemy_y                                           | gc/enemy_y[7]_i_1_n_0                         |                1 |              4 |         4.00 |
+|  drw/p_1_in                 | gc/drw/b_ptr[3]_i_1__12_n_0                          |                                               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | gc/genblk1[9].cc/b_ptr[3]_i_1__8_n_0          |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[3].cc/out_collided_bullet[7]_i_1__2_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[1].cc/out_collided_bullet[7]_i_1__0_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[10].cc/out_collided_bullet[7]_i_1__9_n_0  |                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG              | gc/genblk1[9].cc/out_collided_bullet[7]_i_1__8_n_0   |                                               |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG              | gc/genblk1[5].cc/out_collided_bullet[7]_i_1__4_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[8].cc/out_collided_bullet[7]_i_1__7_n_0   |                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG              | gc/genblk1[2].cc/out_collided_bullet[7]_i_1__1_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[0].cc/out_collided_bullet[7]_i_1_n_0      |                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG              | gc/genblk1[4].cc/out_collided_bullet[7]_i_1__3_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[7].cc/out_collided_bullet[7]_i_1__6_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[6].cc/out_collided_bullet[7]_i_1__5_n_0   |                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | gc/genblk1[11].cc/out_collided_bullet[7]_i_1__10_n_0 |                                               |                1 |              5 |         5.00 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/bullets_reg[1][0]                   | gc/genblk1[2].cc/state_reg[0]                 |                2 |              5 |         2.50 |
+|  drw/p_1_in                 | gc/drw/en_ptr[5]_i_1_n_0                             |                                               |                1 |              6 |         6.00 |
+|  counter_clk_reg[21]        | gc/rng/E[0]                                          | gc/rng/input_c_reg                            |                2 |              6 |         3.00 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/state_reg[0]_0                      | gc/genblk1[4].cc/state_reg[0]                 |                2 |              6 |         3.00 |
+|  counter_clk_reg[21]        | gc/genblk1[5].cc/state_reg[0]                        | gc/genblk1[8].cc/state_reg[1]                 |                4 |              7 |         1.75 |
+|  drw/p_1_in                 | gc/drw/c_ptr0                                        | gc/drw/c_ptr[10]_i_1_n_0                      |                2 |              8 |         4.00 |
+|  i2c_master/i2c_clk_reg_n_0 | i2c_master/counter[7]_i_1_n_0                        |                                               |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG              | i2c_master/enable_reg[0]                             | input_c                                       |                2 |              8 |         4.00 |
+|  drw/p_1_in                 | gc/drw/wsr_ptr[10]_i_2_n_0                           | gc/drw/wsr_ptr[10]_i_1_n_0                    |                2 |              8 |         4.00 |
+|  drw/p_1_in                 | gc/drw/sel                                           | gc/drw/address_in3[-1111111108]_i_1_n_0       |                2 |              8 |         4.00 |
+|  drw/p_1_in                 | gc/drw/isr_ptr[10]_i_2_n_0                           | gc/drw/isr_ptr[10]_i_1_n_0                    |                4 |              8 |         2.00 |
+|  drw/p_1_in                 | gc/drw/enemy_counter[7]_i_1_n_0                      |                                               |                5 |              8 |         1.60 |
+|  drw/p_1_in                 | gc/drw/lsr_ptr[10]_i_2_n_0                           | gc/drw/lsr_ptr[10]_i_1_n_0                    |                3 |              8 |         2.67 |
+|  counter_clk_reg[21]        | gc/enemy_x[7]_i_2_n_0                                | gc/enemy_x[7]_i_1_n_0                         |                2 |              8 |         4.00 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/state_reg[0]_0                      | gc/genblk1[4].cc/state_reg[1]                 |                4 |              9 |         2.25 |
+|  i2c_master/i2c_clk_reg_n_0 | i2c_master/saved_data[6]_i_1_n_0                     |                                               |                3 |              9 |         3.00 |
+|  i2c_master/i2c_clk_reg_n_0 | i2c_master/FSM_onehot_state[10]_i_1_n_0              | input_c                                       |                2 |              9 |         4.50 |
+|  drw/p_1_in                 | gc/drw/CEP                                           |                                               |                4 |             11 |         2.75 |
+|  counter_clk_reg[21]        | gc/genblk1[5].cc/state_reg[0]                        |                                               |                7 |             12 |         1.71 |
+|  counter_clk_reg[21]        | gc/enemy_map                                         | gc/enemy_map[11]_i_1_n_0                      |               10 |             12 |         1.20 |
+|  counter_clk_reg[21]        | gc/rng/E[0]                                          |                                               |                8 |             13 |         1.62 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/bullets_reg[1][0]                   |                                               |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG              |                                                      | i2c_master/counter_independent[15]_i_1_n_0    |                4 |             15 |         3.75 |
+|  counter_clk_reg[21]        | gc/rng/bullets_reg[4][0]_1                           |                                               |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG              | i2c_master/E[0]                                      | input_c                                       |                5 |             16 |         3.20 |
+|  counter_clk_reg[21]        | gc/rng/state_reg[2]                                  | gc/genblk1[5].cc/out_collided_bullet_reg[1]_0 |                9 |             16 |         1.78 |
+|  clk_IBUF_BUFG              |                                                      | i2c_master/i2c_clk                            |                5 |             16 |         3.20 |
+|  counter_clk_reg[21]        | gc/rng/bullets_reg[6][0][0]                          |                                               |                6 |             19 |         3.17 |
+|  counter_clk_reg[21]        | gc/genblk1[2].cc/E[0]                                |                                               |                9 |             19 |         2.11 |
+|  counter_clk_reg[21]        | gc/rng/bullets_reg[2][0]_1[0]                        |                                               |                7 |             19 |         2.71 |
+|  counter_clk_reg[21]        | gc/rng/bullets_reg[0][0]_3[0]                        |                                               |                7 |             19 |         2.71 |
+|  drw/p_1_in                 | gc/drw/address_in__3                                 |                                               |               11 |             19 |         1.73 |
+|  drw/p_1_in                 |                                                      |                                               |               13 |             24 |         1.85 |
+|  counter_clk_reg[21]        |                                                      |                                               |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG              |                                                      |                                               |               36 |             79 |         2.19 |
++-----------------------------+------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+
+

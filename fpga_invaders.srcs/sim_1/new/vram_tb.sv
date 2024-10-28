@@ -50,6 +50,8 @@ module i2c_test_tb;
 
         #1_000 btnC = 1;
         #1_000 btnC = 0;
+        
+        #100_000_000 btnU = 1;
     end
 
 endmodule

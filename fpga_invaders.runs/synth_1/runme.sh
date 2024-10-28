@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log i2c_test.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_test.tcl
+EAStep vivado -log fpga_invaders.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_invaders.tcl
