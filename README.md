@@ -2,7 +2,7 @@
 
 ## About
 
-A Gpace Invaders game written using SystemVerilog. To launch the game you need: 
+A Space Invaders game written using SystemVerilog. To launch the game you need: 
 
 - Basys3 board
 - SSD1306 OLED screen
